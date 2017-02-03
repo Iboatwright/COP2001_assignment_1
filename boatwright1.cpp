@@ -3,8 +3,8 @@
 // Some stupid assignment that we have to figure out how to create on our own.
 #include <iostream>
 
-// test if a=0
-// computational errors will be tested for
+//*** test if a=0
+//*** computational errors will be tested for
 
 using namespace std;
 
@@ -41,7 +41,7 @@ int main() {
 }
 
 double readCoeffs(){
-	cout << "Enter coefficients: " << endl << endl; 
+	cout << "Enter coefficient: " << endl << endl; 
 	return (cin >>);
 }
 
@@ -52,7 +52,7 @@ void equSolver(double a, double b, double c){
 		root2 = (-b - sqrt(compDisc))/(2*a)
 	}
 	
-	return ;
+	return compDisc;
 }
 
 void outResults(double a, double b, double c,bool ind){
