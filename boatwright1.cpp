@@ -16,13 +16,13 @@ double root1, root2;
 double readCoeffs();
 
 // solves the equation and writes solution to globals
-bool equSolver();
+bool equSolver(double, double, double);
 
 // test if (b^2 - 4ac) is negative, if so roots do not exist
-double disc();
+double disc(double, double, double);
 
 // prints the results to stdout
-void outResults();
+void outResults(double, double, double, bool);
 
 
 int main() {
@@ -36,7 +36,7 @@ int main() {
 	c = readCoeffs();
 	
 	// solve the equation
-	ind = equSolver(double a, double b, double c);
+	ind = equSolver(a, b, c);
 	
 	outResults(a, b, c, ind);
 	return 0;
@@ -49,22 +49,26 @@ double readCoeffs(){
 	return temp;
 }
 
-bool equSolver(double a, double b, double c){
-	double compDisc = discr(a, b, c);
-	if (compDisc > -1 && a){
-		root1 = (-b + sqrt(compDisc))/(2*a)
-		root2 = (-b - sqrt(compDisc))/(2*a)
-	}
-	
-	return compDisc;
-}
-
 double discr(double a, double b, double c){
 	return (b*b-4*a*c);
 }
 
+bool equSolver(double a, double b, double c){
+	double compDisc = discr(a, b, c);
+	cout << "\ncompDisc: " << compDisc << endl;
+	if (compDisc > -1 && a){
+		root1 = (-b + sqrt(compDisc))/(2*a);
+		root2 = (-b - sqrt(compDisc))/(2*a);
+	} else {
+		compDisc = 0;
+	}
+	cout << "\nroot1: " << root1 << endl;
+	cout << "\nroot2: " << root2 << endl;
+	return compDisc;
+}
+
 void outResults(double a, double b, double c,bool ind){
-	if ind{
+	if (ind){
 		cout << "Quadratic equation with the following coefficients:" << endl;
 		cout << "a: " << a << ";\tb: " << b << ";\tc: " << c << endl;
 		cout << "has the following roots" << endl;
