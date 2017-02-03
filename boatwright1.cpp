@@ -2,6 +2,7 @@
 //		a*x^2 + b*x + c = 0
 // Some stupid assignment that we have to figure out how to create on our own.
 #include <iostream>
+#include <cmath>
 
 //*** test if a=0
 //*** computational errors will be tested for
@@ -15,13 +16,14 @@ double root1, root2;
 double readCoeffs();
 
 // solves the equation and writes solution to globals
-void equSolver();
+bool equSolver();
+
+// test if (b^2 - 4ac) is negative, if so roots do not exist
+double disc();
 
 // prints the results to stdout
 void outResults();
 
-// test if (b^2 - 4ac) is negative, if so roots do not exist
-bool disc();
 
 int main() {
 	// coefficient vars
@@ -41,11 +43,13 @@ int main() {
 }
 
 double readCoeffs(){
+	double temp;
 	cout << "Enter coefficient: " << endl << endl; 
-	return (cin >>);
+	cin >> temp;
+	return temp;
 }
 
-void equSolver(double a, double b, double c){
+bool equSolver(double a, double b, double c){
 	double compDisc = discr(a, b, c);
 	if (compDisc > -1 && a){
 		root1 = (-b + sqrt(compDisc))/(2*a)
@@ -53,6 +57,10 @@ void equSolver(double a, double b, double c){
 	}
 	
 	return compDisc;
+}
+
+double discr(double a, double b, double c){
+	return (b*b-4*a*c);
 }
 
 void outResults(double a, double b, double c,bool ind){
@@ -66,9 +74,5 @@ void outResults(double a, double b, double c,bool ind){
 		cout << "a: " << a << ";\tb: " << b << ";\tc: " << c << endl;
 		cout << "has no roots in the real domain." << endl << endl;
 	}
-	return ;
-}
-
-double discr(double a, double b, double c){
-	return (b*b-4*a*c);
+	return;
 }
