@@ -1,5 +1,6 @@
-// Write a C++ program to solve a single quadratic equation of the form:
-//		a*x^2 + b*x + c = 0
+/* This program solves a single quadratic equation of the form:
+ *		a*x^2 + b*x + c = 0
+ */
 
 #include <iostream>
 #include <cmath>
@@ -64,12 +65,12 @@ bool equSolver(double a, double b, double c){
 void outResults(double a, double b, double c,bool ind){
 	if (ind){
 		cout << "Quadratic equation with the following coefficients:" << endl;
-		cout << "a: " << a << ";\tb: " << b << ";\tc: " << c << endl;
+		cout << "a: " << a << "; b: " << b << "; c: " << c << endl;
 		cout << "has the following roots" << endl;
-		cout << "Root1: " << root1 << ";\tRoot2: " << root2 << endl << endl;
+		cout << "Root1: " << root1 << "; Root2: " << root2 << ";" << endl << endl;
 	} else {
 		cout << "Quadratic equation with the following coefficients:" << endl;
-		cout << "a: " << a << ";\tb: " << b << ";\tc: " << c << endl;
+		cout << "a: " << a << "; b: " << b << "; c: " << c << endl;
 		cout << "has no roots in the real domain." << endl << endl;
 	}
 	return;
