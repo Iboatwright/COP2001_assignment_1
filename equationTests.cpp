@@ -53,6 +53,7 @@ void equationTests(){
 	i=1;
 	for (auto& r : results) {
 		outs << "test[" << i << "] " << r << endl;
+		i++;
 	}
 	outs.close();
 	return;
