@@ -42,21 +42,22 @@ void equationTests(){
 			tmpRoot1 = (-coefB[i] + sqrt(tmpDisc))/(2*coefA[i]);
 			tmpRoot2 = (-coefB[i] - sqrt(tmpDisc))/(2*coefA[i]);
 			if (tmpRoot1 == tmpRoot2){ // equal roots
-				results[i] = (expected[i] == 1)?"passed ":"failed ";
+				//results[i] = (expected[i] == 1)?"passed ":"failed ";
 				results[i] += "- roots: " + std::to_string(tmpRoot1);
 			} else { // two different real roots
-				results[i] = (expected[i] == 3)?"passed ":"failed ";
+				//results[i] = (expected[i] == 3)?"passed ":"failed ";
 				results[i] +=  "- root1: " + std::to_string(tmpRoot1) + ", root2: " + std::to_string(tmpRoot2);
 			}
 		} else { // imaginary roots
-			results[i] = (expected[i] == 2)?"passed ":"failed ";
+			//results[i] = (expected[i] == 2)?"passed ":"failed ";
 			results[i] += "- discriminant: " + std::to_string(tmpDisc);
 		}
 		i++;
 	}
-	i=1;
+	i=0;
 	for (auto& r : results) {
-		outs << "test[" << i << "] " << r << endl;
+		outs << "[" << (i+1) << "]  (a, b, c): (" << coefA[i] << ", " << _
+			coefB[i] << ", " << coefC[i] << ")\t" << r << endl;
 		i++;
 	}
 	outs.close();
