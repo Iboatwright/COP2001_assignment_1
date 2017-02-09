@@ -60,7 +60,8 @@ double discr(double a, double b, double c){
 	return (b*b-4*a*c);
 }
 
-// Gets the discriminant and if it's greater than -1 computes the roots.
+// Gets the discriminant and if it's greater than -1 and a does not equal zero, 
+//	computes the roots.
 bool equSolver(double a, double b, double c){
 	double compDisc = discr(a, b, c);
 	
