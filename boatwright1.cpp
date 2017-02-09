@@ -50,8 +50,9 @@ int main() {
 // Operator inputs a double for use as a coefficient.
 double readCoeffs(){
 	double temp;
-	cout << "Enter coefficient: " << endl << endl; 
+	cout << "Enter coefficient: "; 
 	cin >> temp;
+	cout << endl;
 	return temp; // I couldn't find a simple one-liner method for this.
 }
 
