@@ -10,32 +10,36 @@ using namespace std;
 // global variables
 double root1, root2;
 
-// reads coefficients from keyboard and returns to main
+// Reads and returns a single coefficient from stdin.
 double readCoeffs();
 
-// solves the equation and writes solution to globals
+// Solves for roots and stores the solutions in global variables.
+// If real roots exists returns a 1 (true) if no real roots exist 
+// 0 (false) is returned.
 bool equSolver(double, double, double);
 
-// test if (b^2 - 4ac) is negative, if so roots do not exist
+// Calculates and returns the discriminant.
 double disc(double, double, double);
 
-// prints the results to stdout
+// Prints the results to stdout.  Output is determined by the boolean
+// returned by equSolver, either real roots exist or they don't.
 void outResults(double, double, double, bool);
 
 
 int main() {
-	// coefficient vars
-	double a, b, c;
-	bool ind;
+	// local variables
+	double a, b, c;	// coefficients
+	bool ind; // boolean - 1 (true): real roots exist
 	
-	// have operator enter values for variables
+	// Operator enters values for the coefficients.
 	a = readCoeffs();
 	b = readCoeffs();
 	c = readCoeffs();
 	
-	// solve the equation
+	// Solve for the roots and determine if there are real roots.
 	ind = equSolver(a, b, c);
 	
+	// Print results to stdout.
 	outResults(a, b, c, ind);
 	return 0;
 }
