@@ -1,6 +1,3 @@
-/* This program solves a single quadratic equation of the form:
- *		a*x^2 + b*x + c = 0
- */
 /***************************************************************************
    This program solves a single quadratic equation of the form:
   		a*x^2 + b*x + c = 0
@@ -16,25 +13,36 @@ using namespace std;
 // global variables
 double root1, root2;
 
+// Reads and returns a single coefficient from stdin.
 double readCoeffs();
 
+// Solves for roots and stores the solutions in global variables.
+// If real roots exists returns a 1 (true) if no real roots exist 
+// 0 (false) is returned.
 bool equSolver(double, double, double);
 
 // Calculates and returns the discriminant.
-// test if (b^2 - 4ac) is negative, if so roots do not exist
 double disc(double, double, double);
 
+// Prints the results to stdout.  Output is determined by the boolean
+// returned by equSolver, either real roots exist or they don't.
 void outResults(double, double, double, bool);
 
 
 int main() {
-	
+	// local variables
+	double a, b, c;	// coefficients
+	bool ind; // boolean - 1 (true): real roots exist
+		
+	// Operator enters values for the coefficients.
 	a = readCoeffs();
 	b = readCoeffs();
 	c = readCoeffs();
 	
+	// Solve for the roots and determine if there are real roots.
 	ind = equSolver(a, b, c);
 	
+	// Print results to stdout.
 	outResults(a, b, c, ind);
 	return 0;
 }
