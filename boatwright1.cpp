@@ -47,17 +47,20 @@ int main() {
 	return 0;
 }
 
+// Operator inputs a double for use as a coefficient.
 double readCoeffs(){
 	double temp;
 	cout << "Enter coefficient: " << endl << endl; 
 	cin >> temp;
-	return temp;
+	return temp; // I couldn't find a simple one-liner method for this.
 }
 
+// Computes and returns the discriminant.
 double discr(double a, double b, double c){
 	return (b*b-4*a*c);
 }
 
+// Gets the discriminant and if it's greater than -1 computes the roots.
 bool equSolver(double a, double b, double c){
 	double compDisc = discr(a, b, c);
 	
@@ -66,16 +69,16 @@ bool equSolver(double a, double b, double c){
 		root2 = (-b - sqrt(compDisc))/(2*a);
 	}
 	
-	return (compDisc > -1)?1:0;
+	return (compDisc > -1)?1:0; // If roots exists 1 is returned, else 0.
 }
 
 void outResults(double a, double b, double c,bool ind){
-	if (ind){
+	if (ind){  // If the discriminant was greater than -1 prints the root values.
 		cout << "Quadratic equation with the following coefficients:" << endl;
 		cout << "a: " << a << "; b: " << b << "; c: " << c << endl;
 		cout << "has the following roots" << endl;
 		cout << "Root1: " << root1 << "; Root2: " << root2 << ";" << endl << endl;
-	} else {
+	} else {  // If the discriminant was -1 or less prints that no real roots exist.
 		cout << "Quadratic equation with the following coefficients:" << endl;
 		cout << "a: " << a << "; b: " << b << "; c: " << c << endl;
 		cout << "has no roots in the real domain." << endl << endl;
