@@ -1,8 +1,14 @@
 /***************************************************************************
-   This program solves a single quadratic equation of the form:
+ boatwright1.cpp
+ COP 2001 Assignment #1 - 2017
+ Ivan Boatwright
+ ijboatwright5153@eagle.fgcu.edu
+ February 9, 2017
+ 
+ This program solves a single quadratic equation of the form:
   		a*x^2 + b*x + c = 0
-   Where a, b, and c are entered by the operator when prompted. The results
-   are printed to stdout and vary based on the value of the discriminant.
+ Where a, b, and c are entered by the operator when prompted. The results
+ are printed to stdout and vary based on the value of the discriminant.
  ***************************************************************************/
 
 #include <iostream>
