@@ -77,7 +77,7 @@ bool equSolver(double a, double b, double c){
 		root2 = (-b - sqrt(compDisc))/(2*a);
 	}
 	
-	return (compDisc > -1)?1:0; // If roots exists 1(true) is returned, else 0.
+	return (compDisc > -1 && a!=0)?1:0; // If roots exists 1(true) is returned, else 0.
 }
 
 void outResults(double a, double b, double c,bool ind){
