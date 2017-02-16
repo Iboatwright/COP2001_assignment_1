@@ -35,7 +35,7 @@ double disc(double, double, double);
 void outResults(double, double, double, bool);
 
 
-int main() {
+int main(int argc, char* agv[]) {
 	// local variables
 	double a, b, c;	// coefficients
 	bool ind; // boolean - 1 (true): real roots exist
@@ -67,17 +67,17 @@ double discr(double a, double b, double c){
 	return (b*b-4*a*c);
 }
 
-// Gets the discriminant and if it's greater than -1 and a does not equal zero, 
-//	computes the roots.
+// Gets the discriminant and if it's greater than or equal to 0 
+//	and a does not equal 0, computes the roots and returns true
 bool equSolver(double a, double b, double c){
 	double compDisc = discr(a, b, c);
 	
-	if (compDisc > -1 && a){
+	if (compDisc >= 0 && a){
 		root1 = (-b + sqrt(compDisc))/(2*a);
 		root2 = (-b - sqrt(compDisc))/(2*a);
 	}
 	
-	return (compDisc > -1 && a!=0)?1:0; // If roots exists 1(true) is returned, else 0.
+	return (compDisc >= 0 && a!=0)?true:false; // If roots exists true is returned, else false.
 }
 
 void outResults(double a, double b, double c,bool ind){
